@@ -1,13 +1,7 @@
 node_modules
 
-.env
-.code-workspace
-.vercel
-.output
-
-andebolgest.txt
-
-/.cache
 /build
-/public/build
-/api/index.js
+.env
+.vercel
+
+.vercel
