@@ -5,8 +5,10 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
-import styles from './styles/app.css';
+import { Analytics } from "@vercel/analytics/react";
+
+import type { LinksFunction } from "@remix-run/node"; 
+import styles from "./styles/app.css";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -25,6 +27,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );

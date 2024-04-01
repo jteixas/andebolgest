@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@vercel/remix";
 
 export const meta: MetaFunction = () => {
   return [
@@ -12,5 +12,5 @@ export default function Index() {
     <div className="h-screen bg-slate-700 flex justify-center items-center">
       <h2 className="text-blue-600 font-extrabold text-5xl">AndebolGest Is Working!</h2>
     </div>
-  )
+  );
 }

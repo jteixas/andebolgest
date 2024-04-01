@@ -16,6 +16,7 @@ First, build your app for production:
 
 ```sh
 npm run build
+vercel
 ```
 
 Then run the app in production mode:
