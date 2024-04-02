@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@vercel/remix";
+import { Blockquote } from "flowbite-react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,9 +9,9 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  return (
+  return (    
     <div className="h-screen bg-slate-700 flex justify-center items-center">
-      <h2 className="text-blue-600 font-extrabold text-5xl">AndebolGest Is Working!</h2>
+      <Blockquote className="text-blue-600 font-extrabold text-5xl">AndebolGest Is Working!</Blockquote>
     </div>
   );
 }
