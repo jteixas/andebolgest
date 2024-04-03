@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@vercel/remix";
-import { Blockquote } from "flowbite-react";
+import { Navbar } from "~/components/nav-bar";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,8 +10,6 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (    
-    <div className="h-screen bg-slate-700 flex justify-center items-center">
-      <Blockquote className="text-blue-600 font-extrabold text-5xl">AndebolGest Is Working!</Blockquote>
-    </div>
+    <Navbar />      
   );
 }
