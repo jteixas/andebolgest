@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import logo from '/logo_gest.png';
-import logoIcon from '/logo.png';
-import { colorMap } from '~/utils/constants'
+import { navItems } from '~/utils/constants';
 
 export function Navbar() {
     // State to manage the navbar's visibility
@@ -12,18 +11,9 @@ export function Navbar() {
     const handleNav = () => {
       setNav(!nav);
     };
-  
-    // Array containing navigation items
-    const navItems = [
-      { id: 1, text: 'Home' },
-      { id: 2, text: 'Company' },
-      { id: 3, text: 'Resources' },
-      { id: 4, text: 'About' },
-      { id: 5, text: 'Contact' },
-    ];
-  
+    
     return (
-      <div className={`bg-black flex justify-between items-center h-24 max-w mx-auto px-4 text-white`}>
+      <div className="bg-agBlue-900 flex justify-between items-center h-24 max-w mx-auto px-4 text-white">
         {/* Logo */}        
         {
             nav ? <div className='block'></div>:
@@ -34,7 +24,7 @@ export function Navbar() {
           {navItems.map(item => (
             <li
               key={item.id}
-              className={`p-4 hover:bg-${colorMap.BLUE1} rounded-xl m-2 cursor-pointer duration-300 hover:text-black`}
+              className="p-4 hover:bg-agBlue-200 rounded-xl m-2 cursor-pointer duration-300 hover:text-black"
             >
               {item.text}
             </li>
@@ -50,17 +40,17 @@ export function Navbar() {
         <ul
           className={
             nav
-              ? `fixed md:hidden left-0 top-0 w-[60%] h-full border-r bg-black ease-in-out duration-500`
+              ? 'fixed md:hidden left-0 top-0 w-[40%] h-full border-r bg-agBlue-900 ease-in-out duration-500'
               : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]'
           }
         >
           {/* Mobile Logo */}
-          <img className="m-2" src={logoIcon} alt="AndebolGest" width={48} height={48}/>          
+          <img className="m-2" src={logo} alt="AndebolGest" width={156} height={36}/>          
           {/* Mobile Navigation Items */}
           {navItems.map(item => (
             <li
               key={item.id}
-              className={`p-4 rounded-xl duration-300 hover:bg-${colorMap.BLUE1} cursor-pointer hover:text-black`}
+              className="p-4 rounded-xl duration-300 hover:bg-agBlue-200 cursor-pointer hover:text-black"
             >
               {item.text}
             </li>
