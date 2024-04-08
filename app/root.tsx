@@ -24,7 +24,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
         <ThemeModeScript />
       </head>
-      <body className="bg-agBlue-800">
+      <body className="bg-agDarkBlue-800">
         {children}
         <ScrollRestoration />
         <Scripts />

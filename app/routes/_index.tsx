@@ -1,6 +1,7 @@
-import type { MetaFunction } from "@vercel/remix";
-import { Navbar } from "~/components/nav-bar";
+import { Card } from "~/components/card";
+import { Layout } from "~/components/layout";
 
+import type { MetaFunction } from "@vercel/remix";
 export const meta: MetaFunction = () => {
   return [
     { title: "AndebolGest" },
@@ -8,8 +9,11 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Index() {
+export default function Index({ children }: { children: React.ReactNode }) {
+
   return (    
-    <Navbar />      
+      <Layout >             
+          <Card/>                  
+      </Layout>    
   );
 }

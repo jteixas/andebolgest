@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useNavigate} from "@remix-run/react";
+import { Button } from "flowbite-react";
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import logo from '/logo_gest.png';
 import { navItems } from '~/utils/constants';
@@ -11,9 +13,12 @@ export function Navbar() {
     const handleNav = () => {
       setNav(!nav);
     };
+
+    const navigate = useNavigate();
     
     return (
-      <div className="bg-agBlue-900 flex justify-between items-center h-24 max-w mx-auto px-4 text-white">
+      <>
+      <div className="bg-agDarkBlue-900 flex justify-between items-center h-24 max-w mx-auto px-4 text-white">
         {/* Logo */}        
         {
             nav ? <div className='block'></div>:
@@ -22,12 +27,13 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <ul className='hidden md:flex'>
           {navItems.map(item => (
-            <li
+            <Button 
+              className="border border-agLightBlue-300 bg-agLightBlue-100 text-black focus:ring-4 focus:ring-agLightBlue-100 enabled:hover:bg-agLightBlue-200 px-5 mx-2" 
               key={item.id}
-              className="p-4 hover:bg-agBlue-200 rounded-xl m-2 cursor-pointer duration-300 hover:text-black"
+              onClick={() => navigate(item.linkTo)}
             >
-              {item.text}
-            </li>
+            {item.text}
+          </Button>
           ))}
         </ul>
   
@@ -40,7 +46,7 @@ export function Navbar() {
         <ul
           className={
             nav
-              ? 'fixed md:hidden left-0 top-0 w-[40%] h-full border-r bg-agBlue-900 ease-in-out duration-500'
+              ? 'fixed md:hidden left-0 top-0 w-[40%] h-full border-r bg-agDarkBlue-900 ease-in-out duration-500'
               : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]'
           }
         >
@@ -50,13 +56,15 @@ export function Navbar() {
           {navItems.map(item => (
             <li
               key={item.id}
-              className="p-4 rounded-xl duration-300 hover:bg-agBlue-200 cursor-pointer hover:text-black"
+              className="p-4 rounded-xl duration-300 hover:bg-agLightBlue-200 cursor-pointer hover:text-black"
+              onClick={() => navigate(item.linkTo)}
             >
               {item.text}
             </li>
           ))}
         </ul>
       </div>
+      </>
     );
   };
   
